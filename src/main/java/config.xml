@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<!--PROPERTY INJECTION/SETTER INJECTION-->
+	<!--value as TAG-->
+	<bean class="com.spingcore.springcore.Student" name="student1">
+		<property name="studentId">
+			<value>23424</value>
+		</property>
+		<property name="studentName">
+			<value>Debrana Dutta</value>
+		</property>
+		<property name="studentAddress">
+			<value>Chinsurah, Hooghly</value>
+		</property>
+	</bean>
+	<!--Value as Attribute-->
+	<bean class="com.spingcore.springcore.Student" name="student2">
+		<property name="studentId" value="25236"></property>
+		<property name="studentName" value="Sandipan Modak"></property>
+		<property name="studentAddress" value="Chinsurah, Hooghly"></property>
+	</bean>
+	<!--Using P schema-->
+	<bean class="com.spingcore.springcore.Student" name="student3" p:studentId="52436" p:studentName="Aritra Mallick" p:studentAddress="Uttarpara, Kolkata"/>
+</beans>

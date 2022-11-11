@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:c="http://www.springframework.org/schema/c" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!--STAND ALONE LIST-->
+	<util:list list-class="java.util.LinkedList" id="mybbestfiends">
+		<value>Aman</value>
+		<value>Raman</value>
+		<value>Ankit</value>
+		<value>Soham</value>
+	</util:list>
+
+
+	<!--STAND ALONE MAP-->
+	<util:map map-class="java.util.HashMap" id="feeStructures">
+		<entry key="BTECH" value="400000" />
+		<entry key="BSC" value="150000" />
+		<entry key="MTECH" value="250000" />
+		<entry key="MSC" value="200000" />
+	</util:map>
+
+
+	<!--STAND ALONE PROPERTIES-->
+	<util:properties id="properties">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">Durgesh</prop>
+		<prop key="pasword">durgesh</prop>
+	</util:properties>
+
+
+	<bean class="com.springcore.standalone.collections.Person" name="person1">
+		<property name="friends">
+			<ref bean="mybbestfiends" />
+		</property>
+		<property name="feeStructure">
+			<ref bean="feeStructures" />
+		</property>
+		<property name="properties">
+			<ref bean="properties" />
+		</property>
+	</bean>
+
+
+	<bean class="com.springcore.standalone.collections.Person" name="person2" p:friends-ref="mybbestfiends" p:feeStructure-ref="feeStructures" p:properties-ref="properties" />
+</beans>

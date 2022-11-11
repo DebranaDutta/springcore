@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+	<bean class="com.springcore.auto.wire.annotation.Engine" name="engine1">
+		<property name="MAX_POWER" value="3000" />
+		<property name="MAX_TORQUE" value="12" />
+		<property name="COOLING_SYSTEM" value="OIL COOLED" />
+		<property name="TRANSMISSION_TYPE" value="MANUAL" />
+	</bean>
+	<bean class="com.springcore.auto.wire.annotation.Engine" name="engine2">
+		<property name="MAX_POWER" value="7000" />
+		<property name="MAX_TORQUE" value="20" />
+		<property name="COOLING_SYSTEM" value="LIQUID COOLED" />
+		<property name="TRANSMISSION_TYPE" value="MANUAL" />
+	</bean>
+	<bean class="com.springcore.auto.wire.annotation.Car" name="Car"/>
+</beans>

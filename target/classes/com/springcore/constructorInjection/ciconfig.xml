@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c" xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean class="com.springcore.constructorInjection.Certificate" name="certificate1">
+		<constructor-arg value="JAVA J2EE" />
+	</bean>
+	<bean class="com.springcore.constructorInjection.Certificate" name="certificate2">
+		<constructor-arg value="ANDROID USING COTLIN" />
+	</bean>
+	<bean class="com.springcore.constructorInjection.Certificate" name="certificate3" c:name=".NET" />
+
+	<!--CONSTRUCTOR INJECTION-->
+	<bean class="com.springcore.constructorInjection.Person" name="person1">
+		<!--value as TAG-->
+		<constructor-arg>
+			<value>Tharun</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value type="int">12542</value>
+		</constructor-arg>
+		<constructor-arg ref="certificate1" />
+	</bean>
+	<bean class="com.springcore.constructorInjection.Person" name="person2">
+		<!--Value as Attribute-->
+		<constructor-arg value="Debrana" />
+		<constructor-arg value="152463" type="int" />
+		<constructor-arg ref="certificate2" />
+	</bean>
+	<!--Using C schema-->
+	<bean class="com.springcore.constructorInjection.Person" name="person3" c:name="Urmi" c:personId="52641" c:certificate-ref="certificate3" />
+
+	<bean class="com.springcore.constructorInjection.Adition" name="addition1">
+		<constructor-arg type="int" value="10" index="1" />
+		<constructor-arg type="int" value="20" index="0" />
+	</bean>
+	<bean class="com.springcore.constructorInjection.Adition" name="addition2">
+		<constructor-arg type="double" value="30" index="1" />
+		<constructor-arg type="double" value="40" index="0" />
+	</bean>
+</beans>
